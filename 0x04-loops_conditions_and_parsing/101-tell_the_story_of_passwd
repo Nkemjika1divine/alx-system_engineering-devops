@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script tells the story of passwd file
+if [ -e "/etc/passwd" ]
+then
+	while IFS=':' read -r usname pswd usid grid usidin homedir comm
+	do
+		echo "The user $usname is part of the $grid gang, lives in $homedir and rides $comm. $usid's place is protected by the passcode $pswd, more info about the user here: $usidin"
+	done < "/etc/passwd"
+fi
