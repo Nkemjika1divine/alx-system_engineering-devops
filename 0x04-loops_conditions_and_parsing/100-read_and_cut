@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script reads the passwd file and prints certain info
+if [ -e "/etc/passwd" ]
+then
+	while IFS=':' read -r usname _ id _ _ home _ 
+	do
+		echo "$usname:$id:$home"
+	done < "/etc/passwd"
+fi
