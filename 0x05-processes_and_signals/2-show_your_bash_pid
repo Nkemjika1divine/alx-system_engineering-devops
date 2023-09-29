@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script orints tge current running processes
+# shellcheck disable=SC2009
+ps aufx | grep -E '[b]ash'
