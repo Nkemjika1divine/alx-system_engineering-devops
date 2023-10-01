@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# This script creates a file an deletes the file
+
+trap hate SIGTERM
+trap nolove SIGINT
+trap deleting SIGQUIT
+
+hate()
+{
+	echo "I hate the kill command"
+	deleting
+}
+
+nolove()
+{
+	echo "Y U no love me?!"
+}
+
+deleting()
+{
+	rm /var/run/myscript.pid
+	exit
+}
+
+echo $$ > /var/run/myscript.pid
+
+while (( 1 ))
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
