@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This program writes to a file
+i=1
+while [ $i -eq 1 ]
+do
+	echo "I am alive!" > /tmp/my_process
+	sleep 2
+done

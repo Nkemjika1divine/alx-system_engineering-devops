@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# This script works on manage_my_process
+
+start_code()
+{
+	./manage_my_process & #starts manage_my_process file
+	echo "$!" > /var/run/my_process.pid #"$!" writes the PID of the file
+	echo "manage_my_process started"
+}
+
+stop_code()
+{
+	kill "$(cat /var/run/my_process.pid)"
+	rm /var/run/my_process.pid
+	echo "manage_my_process stopped"
+}
+
+restart_code()
+{
+	kill "$(cat /var/run/my_process.pid)"
+	rm /var/run/my_process.pid
+	./manage_my_process &
+	echo "$!" > /var/run/my_process.pid
+	echo "manage_my_process restarted"
+}
+
+error_message()
+{
+	echo "Usage: manage_my_process {start|stop|restart}"
+	exit 1
+}
+
+if [ $# -ne 1 ]
+then
+	error_message
+fi
+
+case $1 in
+	start) start_code;;
+	stop) stop_code;;
+	restart) restart_code;;
+	*) error_message;;
+esac
