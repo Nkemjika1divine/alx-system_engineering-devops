@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This pings an IP address 5 times
+
+error_message()
+{
+	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+	exit
+}
+
+if [ $# -eq 1 ]
+then
+
+	if [[ $1 =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]
+	then
+		ping -c 5 "$1"
+	else
+		error_message
+	fi
+else
+	error_message
+fi
