@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This listens on a specific port in a host
+nc -lnp 98
