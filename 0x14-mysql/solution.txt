@@ -1,0 +1,2 @@
+Follow this link to install MySQL distribution 5.7.x
+https://docs.google.com/document/d/1btVRofXP75Cj90_xq2x8AmzuMPOKq6D_Dt_SCDD6GrU/edit
