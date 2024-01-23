@@ -1,2 +1,11 @@
 Follow this link to install MySQL distribution 5.7.x
 https://docs.google.com/document/d/1btVRofXP75Cj90_xq2x8AmzuMPOKq6D_Dt_SCDD6GrU/edit
+
+
+To Perform replication, do this on both servers
+CREATE USER 'holberton_user'@'localhost' IDENTIFIED BY 'projectcorrection280hbtn';
+GRANT REPLICATION CLIENT ON . TO 'holberton_user'@'localhost';
+FLUSH PRIVILEGES;
+
+
+
