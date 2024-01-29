@@ -8,10 +8,12 @@ if __name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com/'
     with open("todo_all_employees.json", "w") as f:
         obj = {}
-        emp_id = 0
+        emp_id = 0  # id of the employees
         while True:
             emp_id += 1
-            emp = requests.get(url + "/users/{}".format(emp_id)).json().get("username")
+            emp = requests.get(url + "/users/{}".format(
+                emp_id
+                )).json().get("username")
             if not emp:
                 break
             todos = requests.get(url + "/users/{}/todos".format(emp_id)).json()
