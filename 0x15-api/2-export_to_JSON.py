@@ -18,8 +18,8 @@ if __name__ == '__main__':
         value_list = []
         for todo in todos:
             values = {}
-            values["task"] = "{}".format(todo.get("title"))
-            values["completed"] = "{}".format(todo.get("completed"))
+            values["task"] = todo.get("title")
+            values["completed"] = todo.get("completed")
             values["username"] = emp
             value_list.append(values)
         obj[emp_id] = value_list
